@@ -1,0 +1,16 @@
+package com.kodewala.cf1;
+
+import java.util.concurrent.CompletableFuture;
+
+public class Driver {
+	
+	public static void main(String[] args) {
+		
+		CompletableFuture<String> completeableFuture =  CompletableFuture.supplyAsync(() -> {
+			System.out.println("I am from supply async");
+			return "SUCCESS";
+		});
+		
+		System.out.println("CompletableFuture response from the supply async: " + completeableFuture.join());
+	}
+}

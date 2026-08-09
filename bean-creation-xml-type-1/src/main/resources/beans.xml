@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<!-- bean definitions here -->
+
+<bean class="com.sreenu.bean.Account" id="acc">
+	<property name="acctNo" value="442424342432"></property>
+</bean>
+
+<bean class="com.sreenu.bean.Account" id="acc1">
+	<property name="acctNo" value="442424342432"></property>
+</bean>
+
+</beans>

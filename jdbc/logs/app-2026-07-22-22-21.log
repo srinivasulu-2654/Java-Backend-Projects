@@ -1,0 +1,28 @@
+2026-07-22 22:21:13 INFO  DebitAndCredit - Sender Balance: -4000
+2026-07-22 22:21:13 INFO  DebitAndCredit - Updated Record: 1
+2026-07-22 22:21:13 INFO  DebitAndCredit - Receiver current Balance is : 23000
+2026-07-22 22:21:13 ERROR DebitAndCredit -  doing rollback()...
+java.sql.SQLException: Parameter index out of range (4 > number of parameters, which is 2).
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1345)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1358)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.setInt(ClientPreparedStatement.java:1536)
+	at com.sreenu.jdbc.logging.DebitAndCredit.doFundTransfer(DebitAndCredit.java:76)
+	at com.sreenu.jdbc.logging.Driver.main(Driver.java:10)
+2026-07-22 22:21:29 INFO  DebitAndCredit - Sender Balance: -4000
+2026-07-22 22:21:30 INFO  DebitAndCredit - Updated Record: 1
+2026-07-22 22:21:30 INFO  DebitAndCredit - Receiver current Balance is : 23000
+2026-07-22 22:21:30 ERROR DebitAndCredit -  doing rollback()...
+java.sql.SQLException: Parameter index out of range (4 > number of parameters, which is 2).
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1345)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1358)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.setInt(ClientPreparedStatement.java:1536)
+	at com.sreenu.jdbc.logging.DebitAndCredit.doFundTransfer(DebitAndCredit.java:76)
+	at com.sreenu.jdbc.logging.Driver.main(Driver.java:10)

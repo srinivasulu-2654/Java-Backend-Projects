@@ -1,0 +1,8 @@
+Name,Phone,Designation,City,Pincode
+Sreenu,9876543210,Software Engineer,Chennai,600001
+Ravi,9123456780,Senior Developer,Bangalore,560001
+Kiran,9988776655,Team Lead,Hyderabad,500001
+Mahesh,9012345678,Project Manager,Pune,411001
+Anjali,9871234567,QA Engineer,Bangalore,400001
+Anjali,9871234567,QA Engineer,Bangalore,400001
+Anjali,9871234567,QA Engineer,Bangalore,400001
