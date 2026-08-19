@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.irctc.booking.entity.BookingEntity;
 import com.irctc.booking.entity.PaymentEntity;
 import com.irctc.booking.exception.InsufficientBalanceException;
+import com.irctc.booking.kafa.producer.service.KafkaService;
 import com.irctc.booking.repository.BookingRepo;
 import com.irctc.booking.repository.PaymentRepo;
 import com.irctc.booking.request.BookingRequest;
@@ -29,6 +30,9 @@ public class BookingService {
 	
 	@Autowired
 	PaymentRepo paymentRepo;
+	
+	@Autowired
+	KafkaService kafkaService;
 	
 	public List<BookingResponse> getTickets(String userId, String pageNumber, String pageSize) {
 		
@@ -83,14 +87,14 @@ public class BookingService {
 		
 		// here creating intentionally creating payment failure -> for @transactional
 		
-		try {
+		/* try {
 			String paymentFromPaymentGateway = null;
 			paymentEntity.setPaymentStatus(paymentFromPaymentGateway.concat("some text...")); // intentionally failing
 		} catch (Exception e) {
 			
 			e.printStackTrace();
 			throw new InsufficientBalanceException("User does not have enough balance to book ticket");
-		}
+		} */
 	PaymentEntity paymentEntityResponse = paymentRepo.save(paymentEntity); // 2nd query
 		
 	BookingResponse bookingResponse = null;
@@ -113,6 +117,18 @@ public class BookingService {
 			bookingResponse.setBookingId(updatedRecord.getBookingId());
 			bookingResponse.setMessage("Successfully booked the ticket");
 			
+		}
+		
+		System.out.println("========== BEFORE KAFKA LOOP ==========");
+		
+		// handling Kafka produer 
+		
+		for(int i=0;i<500;i++) {
+			
+			// send events to kafka for notification
+			String message = "This is test message and pnr is " + bookingResponse.getPnrNumber();
+			kafkaService.publishMessage("irctc-booking", message);
+			System.out.println("Event published to kafka......... " + message);
 		}
 		
 		return bookingResponse;
