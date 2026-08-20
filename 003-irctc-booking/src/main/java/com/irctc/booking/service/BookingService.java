@@ -34,6 +34,9 @@ public class BookingService {
 	@Autowired
 	KafkaService kafkaService;
 	
+	@Autowired
+	PaymentClient paymentClient;
+	
 	public List<BookingResponse> getTickets(String userId, String pageNumber, String pageSize) {
 		
 		Pageable pageable = PageRequest.of(Integer.parseInt(pageNumber),Integer.parseInt(pageSize));
@@ -79,9 +82,14 @@ public class BookingService {
 		bookingEntity = bookingRepo.save(bookingEntity); // till here saved in db but down it got failed right -> so rollback happened
 		
 		// initiate a payment
+		int amount = 13000;
+		String paymentResponse = paymentClient.makePayment(amount);
+		
+		System.out.println(" Response from the payment: " + paymentResponse);
+		
 		PaymentEntity paymentEntity = new PaymentEntity();
 		
-		paymentEntity.setAmount(1345);
+		paymentEntity.setAmount(amount);
 		paymentEntity.setBookingId(bookingEntity.getBookingId());
 		paymentEntity.setTransactionId("TXN12345");
 		
