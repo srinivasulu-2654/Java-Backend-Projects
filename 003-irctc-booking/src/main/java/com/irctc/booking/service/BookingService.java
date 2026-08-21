@@ -62,7 +62,7 @@ public class BookingService {
 		return response;
 	}
 	
-	@Transactional
+//	@Transactional
 	public BookingResponse bookTicket(BookingRequest bookingRequest) {
 		
 		BookingEntity bookingEntity = new BookingEntity();

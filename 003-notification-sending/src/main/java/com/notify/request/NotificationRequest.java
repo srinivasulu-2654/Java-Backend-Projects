@@ -1,19 +1,6 @@
-package com.notify.entity;
+package com.notify.request;
 
-
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "irctc-notification")
-public class NotificationEntity {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+public class NotificationRequest {
 	
 	private String bookingId;
 	private String message;
@@ -36,12 +23,7 @@ public class NotificationEntity {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	
 	
+
 }
