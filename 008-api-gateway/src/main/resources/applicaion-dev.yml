@@ -2,5 +2,4 @@ spring:
   application:
     name: 008-api-gateway
 
-  config:
-    import: configserver:http://localhost:8888
+ 

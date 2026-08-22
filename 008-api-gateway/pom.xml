@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.1</version>
+       <version>4.1.1</version>
         <relativePath/>
     </parent>
 
@@ -42,6 +42,7 @@
     <dependencies>
 
         <!-- Spring Cloud Gateway -->
+        
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway-server-webflux</artifactId>
@@ -52,6 +53,9 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        
+         <!-- Spring Boot Web -->
+  
 
         <!-- Config Client -->
         <dependency>
