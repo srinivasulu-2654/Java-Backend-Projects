@@ -1,0 +1,25 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: 008-api-gateway
+
+  
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: irctc-booking-service
+              uri: lb://003-irctc-booking
+              predicates:
+                - Path=/irctc/booking/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

@@ -1,6 +1,6 @@
 package com.irctc.booking.service;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.irctc.booking.entity.BookingEntity;
@@ -20,7 +21,8 @@ import com.irctc.booking.repository.PaymentRepo;
 import com.irctc.booking.request.BookingRequest;
 import com.irctc.booking.response.BookingResponse;
 
-import jakarta.transaction.Transactional;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+//import jakarta.transaction.Transactional;
 
 @Service
 public class BookingService {
@@ -63,6 +65,7 @@ public class BookingService {
 	}
 	
 //	@Transactional
+	@CircuitBreaker(name = "paymentService",  fallbackMethod = "fallbackPayment")
 	public BookingResponse bookTicket(BookingRequest bookingRequest) {
 		
 		BookingEntity bookingEntity = new BookingEntity();
@@ -178,5 +181,13 @@ public class BookingService {
 	    int seat = ThreadLocalRandom.current().nextInt(10, 100);
 
 	    return seat;
+	}
+	
+	public String  fallbackPayment() {
+		
+		System.out.println("Running fallbackPayment()::::::::::::::::::::");
+		BookingResponse response = new BookingResponse();
+		response.setMessage("Payment service is currently unavaible. Please try later");
+		return response.getMessage();
 	}
 }
