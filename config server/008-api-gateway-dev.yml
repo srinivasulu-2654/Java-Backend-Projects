@@ -5,7 +5,10 @@ spring:
   application:
     name: 008-api-gateway
 
-  
+  data:
+    redis:
+      host: localhost
+      port: 6379
 
   cloud:
     gateway:
@@ -16,6 +19,13 @@ spring:
               uri: lb://003-irctc-booking
               predicates:
                 - Path=/irctc/booking/**
+              filters:
+                - name: RequestRateLimiter
+                  args:
+                    redis-rate-limiter.replenishRate: 5
+                    redis-rate-limiter.burstCapacity: 5
+                    redis-rate-limiter.requestedTokens: 1
+                    key-resolver: "#{@ipKeyResolver}"
 
 eureka:
   client:
