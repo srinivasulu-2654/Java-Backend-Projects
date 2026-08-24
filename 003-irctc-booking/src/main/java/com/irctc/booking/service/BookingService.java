@@ -134,13 +134,13 @@ public class BookingService {
 		
 		// handling Kafka produer 
 		
-		for(int i=0;i<500;i++) {
+		/*for(int i=0;i<500;i++) {
 			
 			// send events to kafka for notification
 			String message = "This is test message and pnr is " + bookingResponse.getPnrNumber();
 			kafkaService.publishMessage("irctc-booking", message);
 			System.out.println("Event published to kafka......... " + message);
-		}
+		} */
 		
 		return bookingResponse;
 	}
