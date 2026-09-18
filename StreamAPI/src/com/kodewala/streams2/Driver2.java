@@ -10,7 +10,7 @@ public class Driver2 {
 	public static void main(String[] args) {
 
 		List<List<String>> input = Arrays.asList(Arrays.asList("Bengaluru","Chennai","Belandur","Kochi"),
-				Arrays.asList("Delhi","Chennai"),Arrays.asList("Gawhati","Kochi"));
+				Arrays.asList("Delhi","Chennai"),Arrays.asList("Gawhati","Kochi","Chennai"));
 		
 		HashSet<String> set = new HashSet<String>();
 		

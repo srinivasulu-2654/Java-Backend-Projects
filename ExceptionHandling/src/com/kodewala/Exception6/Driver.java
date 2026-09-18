@@ -32,7 +32,7 @@ public class Driver {
 				}
 
 		} catch(Exception e) {
-			 // handle --> closing part
+			 //assume we are handling here =>  handle --> closing part
 		}
 		
 		// automatically finally block will exceute by java

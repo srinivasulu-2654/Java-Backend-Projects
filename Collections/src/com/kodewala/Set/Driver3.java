@@ -53,12 +53,14 @@ public class Driver3 {
 		Employeee e2  = new Employeee("suresh");
 		Employeee e3 = new Employeee("paramesh");
 		Employeee e4 = new Employeee("ritesh");
+		Employeee e5 = new Employeee("ritesh");
 		
 		
 		emp.add(e1);
 		emp.add(e2);
 		emp.add(e3);
 		emp.add(e4);
+		emp.add(e5);
 		
 		System.out.println(emp.size()); // return 4
 		System.out.println(e1.hashCode() + " and " + e4.hashCode() + " and e1 and e4 are the same? " + e1.equals(e4));

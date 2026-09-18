@@ -12,6 +12,9 @@ package com.kodewala.threads7;
  		
  	-> So here what the method will be "static" method -> then there will be no object Lock
  	-> it will be "Class Lock"
+ 	
+ 	******************* THis is "Class Lock" ********************
+ 	
  */
 
 class BankAccount1 {
@@ -72,10 +75,10 @@ public class RaceConditionCode1 {
         person1.start();
         person2.start();
         
-        // here .joim() and all not realted to synchronization we have just typed for to complete 1 process 
+        // here .join() and all not related to synchronization we have just typed for to complete 1 process 
         
-        person1.join();
-        person2.join();
+        person1.join();  // why we are doing this na "Main thread will wait until T1 completes"
+        person2.join(); // why we are doing this na "Main thread will wait until T2 completes"
         
         System.out.println("Sreenu's Final Balance is: " + BankAccount1.getBalance());
     }

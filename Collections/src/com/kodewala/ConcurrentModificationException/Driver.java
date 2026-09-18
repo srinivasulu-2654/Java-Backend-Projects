@@ -11,14 +11,15 @@ public static void main(String[] args) {
 		
 		products.add("Apple");
 		products.add("Realme");
-		products.add("Nokia");
 		products.add("$Vivo");
+		products.add("Nokia");
+//		products.add("$Vivo");
 		
 		for(String product : products) // Loop through OR Iterating the List / (modCount == expectedModCount)
 		{
 			if(product.startsWith("$")) {
-//				products.remove(product); // Removing the element OR modifying the List
-				products.add("Lava"); // this will also throw the exception
+				products.remove(product); // Removing the element OR modifying the List
+//				products.add("Lava"); // this will also throw the exception
 				System.out.println(product);
 			}
 		}

@@ -23,7 +23,7 @@ public class Driver {
 			 
 			System.out.println("try block --- END");
 			
-			//System.exit(0); // it will kill the JVM
+//			System.exit(0); // it will kill the JVM (without executing the further lines)
 		}
 		
 		catch(ArrayIndexOutOfBoundsException e) {

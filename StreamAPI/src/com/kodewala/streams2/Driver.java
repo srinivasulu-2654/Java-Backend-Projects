@@ -22,9 +22,10 @@ public class Driver {
 		// this is also terminal operation
 		
 		long cnt = input.stream().filter(c->c.startsWith("A")).map(w->w.toLowerCase()).count(); // 2 GB --> 10 mins
-		long paralleStreamCnt = input.stream().filter(c->c.startsWith("A")).map(w->w.toLowerCase()).count(); // 2 GB --> 1 min
+		long paralleStreamCnt = input.parallelStream().filter(c->c.startsWith("A")).map(w->w.toLowerCase()).count(); // 2 GB --> 1 min
 		
 		System.out.println(processedOuptut);
+		System.out.println(paralleStreamCnt);
 		System.out.println("count is: " + cnt);
 
 	}

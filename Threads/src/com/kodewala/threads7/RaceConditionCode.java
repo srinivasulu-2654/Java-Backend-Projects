@@ -10,8 +10,7 @@ package com.kodewala.threads7;
  		-> which is better synchronized method() or synchronized block()
  		-> Ans : synchronized block()
  		
- 	-> So here what the method will be "static" method -> then there will be no object Lock
- 	-> it will be "Class Lock"
+ 	******************* THis is "Object Lock" ********************
  */
 
 class BankAccount {

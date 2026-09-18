@@ -11,7 +11,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 					itr.remove();
 					System.out.println("Removing the junk element"); 
 				}
- -> this should not do becuase it won't works here
+ -> this should not do because it won't works here
  */
 
 public class Driver2 {

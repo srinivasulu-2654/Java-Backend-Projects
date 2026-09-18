@@ -20,7 +20,8 @@ public class Driver1 {
 
 class Account {
 	
-	public void createAccount() throws FailedtoCreateAccountException{
+	public void createAccount() throws FailedtoCreateAccountException{ // so here this method throws this exception whoever will call 
+		// this method need to handle this exception
 		
 		System.out.println("Account create ... start");
 		

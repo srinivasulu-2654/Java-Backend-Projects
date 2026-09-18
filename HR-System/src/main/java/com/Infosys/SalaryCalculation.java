@@ -13,7 +13,7 @@ public class SalaryCalculation
 	   if(baseSalary < 5000) {
 		   salDetails.put("Error", "Less than 5k not allowed to testing");
 	   }
-	   
+	    
 	   if(baseSalary < 10000) 
 	   {
 		   salDetails.put("base",baseSalary);
