@@ -7,9 +7,10 @@ import com.sreenu.beans.Payment;
 import com.sreenu.config.SpringConfig;
 
 /**
- * Hello world!
- *
- */
+* Hello world!
+*
+*/
+
 public class App 
 {
     public static void main( String[] args )

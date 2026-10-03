@@ -12,8 +12,10 @@ public class App
     {
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         
-        Payment payment = (Payment) context.getBean("createPayment");
+//        Payment payment = (Payment) context.getBean("createPayment");
         
-        payment.printPaymentDetails();
+        SpringConfig springConfig = context.getBean(SpringConfig.class);
+        
+        springConfig.printPaymentDetails();
     }
 }

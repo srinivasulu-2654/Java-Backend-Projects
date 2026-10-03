@@ -11,11 +11,15 @@ import com.sreenu.beans.Payment;
 public class SpringConfig {
 	
 	@Bean("payment")
-	@Scope("prototype")
+//	@Scope("prototype")
+
 	public Payment doPayment() {
 		
 		Payment payment = new Payment();
 		payment.setPaymentRefNo("Ref1234");
 		return payment;
+		
+		
+		
 	}
 }

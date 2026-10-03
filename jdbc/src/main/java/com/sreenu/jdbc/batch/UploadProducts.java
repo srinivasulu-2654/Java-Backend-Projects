@@ -29,7 +29,7 @@ public class UploadProducts {
 			preStmt.addBatch();
 			
 			if(i % ProductJDBCConstants.BATCH_SIZE == 0) {
-				System.out.println("Executing batch of 1000 products...");
+				System.out.println("Executing batch of 5000 products...");
 				preStmt.executeBatch();
 			}
 		}

@@ -12,7 +12,7 @@ public class SpringConfig {
 	
 	@Bean("payment")
 	@Scope("prototype")
-	@Profile("test") // important very famous interview Question
+//	@Profile("test") // important very famous interview Question
 	public Payment createPayment()
 	{
 		Payment payment = new Payment();

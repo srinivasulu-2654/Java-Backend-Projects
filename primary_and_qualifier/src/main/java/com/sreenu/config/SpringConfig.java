@@ -12,7 +12,7 @@ import com.sreenu.pojo.Employee;
 public class SpringConfig {
 	
 	@Bean("emp1")
-	@Primary
+//	@Primary
 	public Employee createEmployee1() {
 		Employee e = new Employee("kodewala1","Academy1","Engineering");
 		return e;

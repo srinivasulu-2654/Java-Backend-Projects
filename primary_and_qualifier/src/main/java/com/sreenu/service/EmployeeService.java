@@ -11,7 +11,7 @@ import com.sreenu.pojo.Employee;
 public class EmployeeService {
 	
 	@Autowired
-//	@Qualifier("emp1")
+	@Qualifier("emp2")
 	private Employee employee;
 	
 	public void printEmployeeDetails() {

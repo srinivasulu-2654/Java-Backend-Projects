@@ -73,7 +73,7 @@ public class DebitAndCredit {
 			PreparedStatement p4 = con.prepareStatement(DBDetails.UPDATE_BALANCE);
 			receiverBalance = receiverBalance + moneyToTransfer;
 			p4.setInt(1, receiverBalance);
-			p4.setInt(4, 56789);
+			p4.setInt(2, 56789);
 			int updatedRecordsFinal = p4.executeUpdate();
 			LOGGER.info("Final records: " + updatedRecordsFinal);
 			
@@ -85,6 +85,8 @@ public class DebitAndCredit {
 		}
 		
 		LOGGER.trace("doFundTransfer() ... END");
+		
+		System.out.println("DebitAndCredit.doFundTransfer().....END");
 	}
 
 }

@@ -1,0 +1,8 @@
+2026-09-22 23:09:17 INFO  DebitAndCredit - Sender Balance: -1000
+2026-09-22 23:09:17 INFO  DebitAndCredit - Updated Record: 1
+2026-09-22 23:09:17 INFO  DebitAndCredit - Receiver current Balance is : 6000
+2026-09-22 23:09:17 INFO  DebitAndCredit - Final records: 1
+2026-09-22 23:09:34 INFO  DebitAndCredit - Sender Balance: -2000
+2026-09-22 23:09:34 INFO  DebitAndCredit - Updated Record: 1
+2026-09-22 23:09:34 INFO  DebitAndCredit - Receiver current Balance is : 7000
+2026-09-22 23:09:34 INFO  DebitAndCredit - Final records: 1

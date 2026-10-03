@@ -1,0 +1,8 @@
+2026-09-22 23:15:47 TRACE DebitAndCredit - doFundTransfer().....START
+2026-09-22 23:15:48 DEBUG DebitAndCredit - inside the loop
+2026-09-22 23:15:48 INFO  DebitAndCredit - Sender Balance: -3000
+2026-09-22 23:15:48 INFO  DebitAndCredit - Updated Record: 1
+2026-09-22 23:15:48 DEBUG DebitAndCredit - Getting inside the credit loop....
+2026-09-22 23:15:48 INFO  DebitAndCredit - Receiver current Balance is : 8000
+2026-09-22 23:15:48 INFO  DebitAndCredit - Final records: 1
+2026-09-22 23:15:48 TRACE DebitAndCredit - doFundTransfer() ... END

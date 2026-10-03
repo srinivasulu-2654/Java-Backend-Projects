@@ -11,7 +11,9 @@ public class Driver {
 		IntCalc intCalc3 = IntCalc.getInstance(); // someone else created
 		
 		System.out.println(intCalc1 == intCalc2);
-
+		
+		
+		
 	}
 
 }
