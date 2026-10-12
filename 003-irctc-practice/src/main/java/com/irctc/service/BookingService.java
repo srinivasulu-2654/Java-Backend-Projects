@@ -14,6 +14,7 @@ import java.util.Random;
 import com.irctc.entity.BookingEntity;
 import com.irctc.entity.PaymentEntity;
 import com.irctc.exception.InsufficientBalanceException;
+import com.irctc.kafka.producer.KafkaService;
 import com.irctc.repo.BookingRepo;
 import com.irctc.repo.PaymentRepo;
 import com.irctc.request.BookingRequest;
@@ -29,6 +30,9 @@ public class BookingService {
 	
 	@Autowired
 	PaymentRepo paymentRepo;
+	
+	@Autowired
+	KafkaService kafkaService;
 	
 	public List<BookingResponse> getAllTcikets(String userId,String pageNumber,String pageSize)
 	{
@@ -83,14 +87,14 @@ public class BookingService {
 //		payment.setPaymentStatus("Failed");
 		payment.setTransactionId("TXN12346");
 		
-		String paymentGateway = null;
+		/*String paymentGateway = null;
 		
 		try {
 			payment.setPaymentStatus(paymentGateway.concat("some text..."));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			throw new InsufficientBalanceException("User didn't have sufficient balance");
-		}
+		}*/
 		
 		PaymentEntity paymentReponse = paymentRepo.save(payment);
 		
@@ -117,7 +121,14 @@ public class BookingService {
 			 
 		 }
 		
-		
+		// kafka starts hre 
+		 
+		 for(int i=0;i<500;i++)
+		 {
+			 String message = "This is the test for pnr message : " + bookingResponse.getPnrNumber();
+			 kafkaService.publishMessage("irctc-test", message);
+			 System.out.println("The message has been published:::::: " + message);
+		 }
 
 		return bookingResponse;
 		
